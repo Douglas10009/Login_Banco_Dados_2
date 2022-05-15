@@ -1,9 +1,12 @@
 <?php
 
-$mysqli = new mysqli("localhost" , "root" , "", "loginsystem");
+$usuario = 'root';
+$senha = '';
+$database = 'login'; //Criar um repositório local com o nome: login
+$host = 'localhost';
 
-if ($mysqli -> error) {
-    die("Falha ao conectarao banco de dados: " . $mysqli->error);
+$mysqli = new mysqli($host, $usuario, $senha, $database);
+
+if($mysqli->error) {
+    die("Falha ao conectar ao banco de dados: " . $mysqli->error);
 }
-
-?>
